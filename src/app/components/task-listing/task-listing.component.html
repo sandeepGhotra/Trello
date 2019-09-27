@@ -1,0 +1,7 @@
+
+      <ul class="list-items" pDroppable="dragarea"  (onDrop)="drop(status)" >
+        <li *ngFor="let ob of listData | search:data.searchText;let i=index;" pDraggable="dragarea"  (onDragStart)="dragStart($event,ob)"
+        ><span *ngIf="!ob.edit">{{ob.task}}</span>
+          <input *ngIf="ob.edit" name="{{index}}" [(ngModel)]="ob.task" (keyup.enter)="ob.edit?(ob.edit=!ob.edit):''">
+          </li>   
+      </ul>
